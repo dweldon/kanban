@@ -29,14 +29,17 @@ let config = {
 };
 
 if (TARGET === 'start' || !TARGET) {
-  config.devServer = {
-    contentBase: PATHS.build,
-    historyApiFallback: true,
-    hot: true,
-    inline: true,
-    progress: true,
-    stats: 'errors-only',
-  };
+  Object.assign(config, {
+    devtool: 'eval',
+    devServer: {
+      contentBase: PATHS.build,
+      historyApiFallback: true,
+      hot: true,
+      inline: true,
+      progress: true,
+      stats: 'errors-only',
+    },
+  });
 
   config.plugins.push(new webpack.HotModuleReplacementPlugin());
 }
