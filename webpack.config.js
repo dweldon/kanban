@@ -24,6 +24,11 @@ let config = {
         loader: 'style!css',
         include: PATHS.app,
       },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel?cacheDirectory',
+        include: PATHS.app,
+      },
     ],
   },
 };
