@@ -17,6 +17,15 @@ let config = {
     filename: 'bundle.js',
   },
   plugins: [],
+  module: {
+    loaders: [
+      {
+        test: /\.css$/,
+        loader: 'style!css',
+        include: PATHS.app,
+      },
+    ],
+  },
 };
 
 if (TARGET === 'start' || !TARGET) {
