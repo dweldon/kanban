@@ -1,11 +1,14 @@
 const path = require('path');
+const webpack = require('webpack');
+
+const TARGET = process.env.npm_lifecycle_event;
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
   build: path.join(__dirname, 'build'),
 };
 
-module.exports = {
+let config = {
   entry: {
     app: PATHS.app,
   },
@@ -13,4 +16,20 @@ module.exports = {
     path: PATHS.build,
     filename: 'bundle.js',
   },
+  plugins: [],
 };
+
+if (TARGET === 'start' || !TARGET) {
+  config.devServer = {
+    contentBase: PATHS.build,
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    progress: true,
+    stats: 'errors-only',
+  };
+
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
+}
+
+module.exports = config;
