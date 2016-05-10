@@ -16,6 +16,9 @@ let config = {
     path: PATHS.build,
     filename: 'bundle.js',
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
   plugins: [],
   module: {
     loaders: [
