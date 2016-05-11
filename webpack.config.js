@@ -29,7 +29,7 @@ let config = {
     loaders: [
       {
         test: /\.css$/,
-        loader: `style!${CSS_LOADER}`,
+        loader: `style!${CSS_LOADER}!postcss`,
         include: PATHS.app,
       },
       {
@@ -38,6 +38,12 @@ let config = {
         include: PATHS.app,
       },
     ],
+  },
+  postcss() {
+    return [
+      require('autoprefixer'),
+      require('postcss-nested'),
+    ];
   },
 };
 
