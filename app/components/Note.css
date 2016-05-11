@@ -1,3 +1,5 @@
+$note-color: #fdfdfd;
+
 .notes {
   margin: 0.5em;
   padding-left: 0;
@@ -8,7 +10,7 @@
 .note {
   padding: 0.5em;
   margin-bottom: @padding;
-  background-color: #fdfdfd;
+  background-color: $note-color;
   box-shadow: 0 0 0.3em 0.03em rgba(0, 0, 0, 0.3);
 
   &:hover {
@@ -24,7 +26,7 @@
 .delete {
   float: right;
   padding: 0;
-  background-color: #fdfdfd;
+  background-color: $note-color;
   border: none;
   cursor: pointer;
   visibility: hidden;

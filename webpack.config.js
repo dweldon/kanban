@@ -43,6 +43,7 @@ let config = {
     return [
       require('autoprefixer'),
       require('postcss-property-lookup'),
+      require('postcss-simple-vars'),
       require('postcss-nested'),
     ];
   },
