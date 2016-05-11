@@ -1,10 +1,11 @@
 import React from 'react';
 import Note from './Note';
+import styles from './Note.css';
 
 export default ({ notes, onEdit, onDelete }) => (
-  <ul>
+  <ul className={styles.notes}>
   {notes.map(note =>
-    <li key={note.id}>
+    <li className={styles.note} key={note.id}>
       <Note
         task={note.task}
         onEdit={onEdit.bind(null, note.id)}

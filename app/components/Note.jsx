@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Note.css';
 
 export default class Note extends React.Component {
   constructor(props) {
@@ -27,14 +28,16 @@ export default class Note extends React.Component {
 
     return (
       <div onClick={this.edit}>
-        <span>{this.props.task}</span>
+        <span className={styles.task}>{this.props.task}</span>
         {onDelete ? this.renderDelete() : null}
       </div>
     );
   }
 
   renderDelete() {
-    return <button onClick={this.props.onDelete}>x</button>;
+    return <button
+      className={styles.delete}
+      onClick={this.props.onDelete}>x</button>;
   }
 
   edit() {

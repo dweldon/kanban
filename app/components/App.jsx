@@ -1,6 +1,7 @@
 import React from 'react';
 import uuid from 'node-uuid';
 import Notes from './Notes';
+import styles from './App.css';
 
 export default class App extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ export default class App extends React.Component {
 
     return (
       <div>
-        <button onClick={this.addNote}>+</button>
+        <button className={styles.add} onClick={this.addNote}>+</button>
         <Notes
           notes={notes}
           onEdit={this.editNote}

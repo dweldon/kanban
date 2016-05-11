@@ -10,6 +10,9 @@ const PATHS = {
   build: path.join(__dirname, 'build'),
 };
 
+const CSS_LOADER = `css?modules&importLoaders=1&\
+localIdentName=[name]__[local]___[hash:base64:5]`;
+
 let config = {
   entry: {
     app: PATHS.app,
@@ -26,7 +29,7 @@ let config = {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'style!css',
+        loader: `style!${CSS_LOADER}`,
         include: PATHS.app,
       },
       {
