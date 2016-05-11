@@ -24,6 +24,7 @@
     "postcss-property-lookup": "^1.2.1",
     "postcss-simple-vars": "^1.2.0",
     "style-loader": "^0.13.1",
+    "sugarss": "^0.1.3",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   },

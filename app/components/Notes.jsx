@@ -1,6 +1,6 @@
 import React from 'react';
 import Note from './Note';
-import styles from './Note.css';
+import styles from './Note.sss';
 
 export default ({ notes, onEdit, onDelete }) => (
   <ul className={styles.notes}>

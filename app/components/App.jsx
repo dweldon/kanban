@@ -1,7 +1,7 @@
 import React from 'react';
 import uuid from 'node-uuid';
 import Notes from './Notes';
-import styles from './App.css';
+import styles from './App.sss';
 
 export default class App extends React.Component {
   constructor(props) {

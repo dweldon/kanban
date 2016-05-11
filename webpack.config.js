@@ -28,8 +28,8 @@ let config = {
   module: {
     loaders: [
       {
-        test: /\.css$/,
-        loader: `style!${CSS_LOADER}!postcss`,
+        test: /\.sss$/,
+        loader: `style!${CSS_LOADER}!postcss?parser=sugarss`,
         include: PATHS.app,
       },
       {
