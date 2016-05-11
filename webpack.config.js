@@ -42,6 +42,7 @@ let config = {
   postcss() {
     return [
       require('autoprefixer'),
+      require('postcss-property-lookup'),
       require('postcss-nested'),
     ];
   },

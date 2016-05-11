@@ -6,8 +6,8 @@
 }
 
 .note {
-  margin-bottom: 0.5em;
   padding: 0.5em;
+  margin-bottom: @padding;
   background-color: #fdfdfd;
   box-shadow: 0 0 0.3em 0.03em rgba(0, 0, 0, 0.3);
 
