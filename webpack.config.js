@@ -10,10 +10,12 @@ const PATHS = {
   build: path.join(__dirname, 'build'),
 };
 
-const CSS_LOADER = `css?modules&importLoaders=1&\
-localIdentName=[name]__[local]___[hash:base64:5]`;
+const CSS_LOADER = 'css?modules&importLoaders=1&' +
+  'localIdentName=[name]__[local]___[hash:base64:5]';
 
-let config = {
+/* eslint-disable global-require */
+
+const config = {
   entry: {
     app: PATHS.app,
   },
@@ -26,6 +28,13 @@ let config = {
   },
   plugins: [],
   module: {
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['eslint'],
+        include: PATHS.app,
+      },
+    ],
     loaders: [
       {
         test: /\.sss$/,
