@@ -3,6 +3,8 @@ import uuid from 'node-uuid';
 import Notes from './Notes';
 import styles from './App.sss';
 
+/* eslint-disable no-param-reassign */
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -29,21 +31,6 @@ export default class App extends React.Component {
     this.deleteNote = this.deleteNote.bind(this);
   }
 
-  render() {
-    const { notes } = this.state;
-
-    return (
-      <div>
-        <button className={styles.add} onClick={this.addNote}>+</button>
-        <Notes
-          notes={notes}
-          onEdit={this.editNote}
-          onDelete={this.deleteNote}
-        />
-      </div>
-    );
-  }
-
   addNote() {
     const note = { id: uuid.v4(), task: 'New Task' };
     const oldNotes = this.state.notes;
@@ -54,8 +41,9 @@ export default class App extends React.Component {
     if (!task.trim()) return;
 
     const notes = this.state.notes.map(note => {
-      if (note.id == id && task)
+      if (note.id === id && task) {
         note.task = task;
+      }
 
       return note;
     });
@@ -69,5 +57,20 @@ export default class App extends React.Component {
     this.setState({
       notes: this.state.notes.filter(note => note.id !== id),
     });
+  }
+
+  render() {
+    const { notes } = this.state;
+
+    return (
+      <div>
+        <button className={styles.add} onClick={this.addNote}>+</button>
+        <Notes
+          notes={notes}
+          onEdit={this.editNote}
+          onDelete={this.deleteNote}
+        />
+      </div>
+    );
   }
 }
