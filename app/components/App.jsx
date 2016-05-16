@@ -1,8 +1,8 @@
 import React from 'react';
 import Notes from './Notes';
 import styles from './App.sss';
-import NoteActions from '../actions/NoteActions';
-import NoteStore from '../stores/NoteStore';
+import NoteActions from 'actions/NoteActions';
+import NoteStore from 'stores/NoteStore';
 
 export default class App extends React.Component {
   constructor(props) {

@@ -24,6 +24,7 @@ const config = {
     filename: 'bundle.js',
   },
   resolve: {
+    root: PATHS.app,
     extensions: ['', '.js', '.jsx'],
   },
   plugins: [],

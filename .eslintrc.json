@@ -6,6 +6,13 @@
       "experimentalObjectRestSpread": true
     }
   },
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "webpack.config.js"
+      }
+    }
+  },
   "rules": {
     "max-len": ["error", 80, 2]
   }
